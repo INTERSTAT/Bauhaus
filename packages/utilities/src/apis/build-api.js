@@ -2,6 +2,7 @@ import {
 	getToken,
 	isTokenValid,
 } from '../auth/open-id-connect-auth/token-utils';
+import { getEnvVar } from '../utils/env';
 
 //const apiURL = `${window.location.origin}/configuration.json`;
 const apiURL = `${process.env.PUBLIC_URL}/configuration.json`;
@@ -62,15 +63,18 @@ export const computeDscr = (fn, [...args]) => {
 	return [url, options, thenHandler];
 };
 
-let saveApiURL;
-export const getBaseURI = context => {
-	return process.env.REACT_APP_INSEE
-		? saveApiURL ||
-				fetch(apiURL).then(res => {
-					saveApiURL = res.json().then(config => config.bauhaus);
-					return saveApiURL;
-				})
-		: Promise.resolve(process.env.REACT_APP_API_BASE_HOST);
+let saveApiURL = '';
+export const getBaseURI = () => {
+	if (saveApiURL) return Promise.resolve(saveApiURL);
+	return getEnvVar('INSEE')
+		? fetch(apiURL).then((res) => {
+				saveApiURL = res.json().then((config) => config.bauhaus);
+				return saveApiURL;
+		  })
+		: Promise.resolve(getEnvVar('API_BASE_HOST')).then((u) => {
+				saveApiURL = u;
+				return u;
+		  });
 };
 
 export const buildCall = (context, resource, fn) => {
