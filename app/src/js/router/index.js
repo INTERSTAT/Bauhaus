@@ -10,7 +10,7 @@ const Root = () =>  {
 	return (
 		<>
 			<div id="root-app">
-				<Router>
+				<Router basename={process.env.PUBLIC_URL}>
 					<Routes />
 				</Router>
 			</div>

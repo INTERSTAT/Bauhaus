@@ -14,7 +14,7 @@
 		"create-zip": "cd build && bestzip build.zip *",
 		"cypress:open": "cypress open",
 		"cypress:run": "cypress run",
-		"e2e": "start-server-and-test start http://localhost:3000 cypress:run",
+		"e2e": "start-server-and-test start https://interstat.opsi-lab.it/bauhaus cypress:run",
 		"eject": "react-scripts eject",
 		"lint": "eslint src",
 		"start": "cross-env REACT_APP_NAME=$npm_package_name REACT_APP_VERSION=$npm_package_version react-scripts start",
@@ -24,6 +24,7 @@
 		"start-storybook": "cross-env NODE_PATH=src/ start-storybook -p 9999",
 		"test:coverage": "cross-env CI=true react-scripts test --coverage --collectCoverageFrom=src/**/*.js --collectCoverageFrom=!src/**/*.spec.js --collectCoverageFrom=!src/**/*.stories.js --collectCoverageFrom=!src/types/*.js"
 	},
+"homepage": "https://interstat.opsi-lab.it/bauhaus/",
 	"dependencies": {
 		"@inseefr/iam": "^0.0.1-rc11",
 		"@inseefr/wilco": "0.0.5",

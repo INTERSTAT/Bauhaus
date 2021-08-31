@@ -7,6 +7,7 @@
 		"packages/*",
 		"app"
 	],
+        "homepage": "https://interstat.opsi-lab.it/bauhaus/",
 	"scripts": {
 		"start": "yarn workspace Bauhaus run start",
 		"build-insee": "yarn workspaces run build-insee",

@@ -3,7 +3,8 @@ import {
 	isTokenValid,
 } from '../auth/open-id-connect-auth/token-utils';
 
-const apiURL = `${window.location.origin}/configuration.json`;
+//const apiURL = `${window.location.origin}/configuration.json`;
+const apiURL = `${process.env.PUBLIC_URL}/configuration.json`;
 
 export const removeTrailingSlash = url => url.replace(/\/$/, '');
 
