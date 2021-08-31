@@ -1,7 +1,7 @@
 {
-	"baseUrl": "http://localhost:3000",
+	"baseUrl": "https://interstat.opsi-lab.it/bauhaus",
 	"defaultCommandTimeout": 8000,
 	"env": {
-		"API": "http://localhost:8081/api/"
+		"API": "https://interstat.opsi-lab.it/bauhaus-back/api/"
 	}
 }

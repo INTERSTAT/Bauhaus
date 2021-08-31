@@ -5,8 +5,8 @@ info:
   title: Swagger Concepts API
   contact:
     email: nicolas.laval@insee.fr
-host: 'localhost:6969'
-basePath: /gncs-core-refactor/ws
+host: 'interstat.opsi-lab.it/bauhaus-back'
+basePath: /bauhaus/api
 tags:
   - name: management
   - name: concepts
